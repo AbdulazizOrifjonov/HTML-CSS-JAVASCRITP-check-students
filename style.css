@@ -7,6 +7,11 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px;
     background-color: #f0f3f5;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 input {
@@ -16,7 +21,7 @@ input {
 }
 
 .container {
-    max-width: 1050px;
+    max-width: 1200px;
     margin: 0 auto;
     background: white;
     padding: 30px;
@@ -35,9 +40,10 @@ h2 {
     display: flex;
     /* padding: 12px 0; */
     border-bottom: 1px dashed #575757;
-    margin: 25px 0 4px 0;
-    align-items: center !;
-    justify-content: center;
+    margin: 15px 0 4px 0;
+    align-items: center ;
+    justify-content: space-between;
+    padding-bottom: 15px;
 }
 .student-name {
     width: 225px;
@@ -46,7 +52,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0px 14px;
+    /* padding: 0px 14px; */
     cursor: pointer;
     border: none;
     border-radius: 8px;
@@ -65,7 +71,6 @@ h2 {
     cursor: pointer;
     border: none;
     border-radius: 8px;
-    margin-left: 20px;
     transition: background-color 0.2s;
     font-weight: 500;
     color: white;
@@ -126,7 +131,7 @@ button {
     border-radius: 8px;
     font-size: 0.85em;
     font-weight: bold;
-    width: 250px;
+    width: 253px;
     height: 35px;
     min-width: 120px;
     text-align: center;
@@ -332,7 +337,7 @@ button {
 .toga {
     display: flex;
     align-items: center;
-    gap: 73px;
+    gap: 5px;
     margin-bottom: 20px;
 }
 
@@ -377,41 +382,57 @@ button {
     background-color: #26a49d; /* Moviyroq/Axborot */
 }
 
-/* Media Queries (Responsive) */
-@media screen and (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-    .student-row {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px 0;
-    }
-    .student-name {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .actions {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .actions button {
-        margin-right: 5px;
-        padding: 6px 10px;
-        font-size: 0.9em;
-    }
-    .status-badge {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-    .toga {
-        flex-direction: column;
-    }
-    #mark-all-present-button, #go-back-button {
-        width: 100%;
-    }
-    .save-button {
-        width: 100% !important;
-        padding: 12px 0 !important;
-    }
+.student-info-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
+/* Media Queries (Responsive) */
+@media screen and (max-width: 1001px) {
+   .student-row{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 15px;
+   }
+   .container{
+    max-width: 780px;
+   }
+   .student-info-wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+.student-name{
+    width: 99%;
+}
+.status-badge{
+    width: 99%;
+}
+.present{
+    width: 100%;
+}
+.late{
+    width: 100%;
+}
+.absent{
+    width: 100%;
+}
+.actions{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 15px;
+}
+}
+/* @media screen and (max-width: 350px) {
+    .toga {
+        display: flex;
+        align-items: center;
+        gap: none !important;
+        margin-bottom: 20px;
+    }
+} */
