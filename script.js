@@ -15,42 +15,42 @@ const UNAVAILABLE_REASON = "Sababsiz (Habarimiz yo'q)";
 
 // Dars jadvallari (Bugungi darslarni o'zgartirishingiz mumkin)
 const SCHEDULE = {
-    "Monday": ["Axborot tizimlari (Ma'ruza)", "Veb dasturlash"],
-    "Tuesday": ["Dasturlash (Amaliyot)", "Falsafa"],
-    "Wednesday": ["Iqtisodiyot", "Veb dasturlash", "Dasturlash (Ma'ruza)"],
-    "Thursday": ["Axborot tizimlari (Amaliyot)", "Kompyuter tarmoqlari"],
-    "Friday": ["Ingliz tili", "Innovatsion iqtisodiyot"],
-    "Saturday": ["Dam olish kuni"],
-    "Sunday": ["Dam olish kuni"]
-};
+  "Monday": ["Information Technology Systems (Lecture)", "Website Development", "Website Development"],
+  "Tuesday": ["Study Skills", "Falsafa L3","Information Technology Systems (Practice)"],
+  "Wednesday": ["Study Skills", "Programming (Practice) L3", "Programming (Lecture) L3"],
+  "Thursday": ["Enterprise in IT", "Programming (Practice) L3"],
+  "Friday": [ "English L3"]
+}
+
 
 // O'quvchilarning yangilangan ro'yxati (Ism bo'yicha alifbo tartibida, Sevara olib tashlangan)
 const INITIAL_STUDENTS = [
     { id: 1, name: "Abdulazizbek Orifjonov", status: "Nomalum", reason: "" },
     { id: 2, name: "Abdulloh Nozimov", status: "Nomalum", reason: "" },
     { id: 3, name: "Azizbek Tulegenov", status: "Nomalum", reason: "" },
-    { id: 4, name: "Axmadjonova Madinaxon", status: "Nomalum", reason: "" }, 
-    { id: 5, name: "Behruz Bozorov", status: "Nomalum", reason: "" },
-    { id: 6, name: "Behruz Ilhomov", status: "Nomalum", reason: "" },
-    { id: 7, name: "Behruz Kurbonov", status: "Nomalum", reason: "" },
-    { id: 8, name: "Bobur Ikromjonov", status: "Nomalum", reason: "" },
-    { id: 9, name: "Darmanbek Shamuratov", status: "Nomalum", reason: "" },
+    { id: 4, name: "Behruz Bozorov", status: "Nomalum", reason: "" }, 
+    { id: 5, name: "Behruz Ilhomov", status: "Nomalum", reason: "" },
+    { id: 6, name: "Behruz Kurbonov", status: "Nomalum", reason: "" },
+    { id: 7, name: "Bobur Ikromjonov", status: "Nomalum", reason: "" },
+    { id: 8, name: "Darmanbek Shamuratov", status: "Nomalum", reason: "" },
+    { id: 9, name: "Foziljon Mo'minov", status: "Nomalum", reason: "" }, 
     { id: 10, name: "Farrux G'aniboyev", status: "Nomalum", reason: "" },
-    { id: 11, name: "Foziljon Mõminov", status: "Nomalum", reason: "" },
-    { id: 12, name: "Jamoliddin Murodullayev", status: "Nomalum", reason: "" },
-    { id: 13, name: "Madinaxon Maxmudova", status: "Nomalum", reason: "" },
-    { id: 14, name: "Mohinur Nosirjonova", status: "Nomalum", reason: "" },
-    { id: 15, name: "Muhammadali Xoshimov", status: "Nomalum", reason: "" },
-    { id: 16, name: "Muhammadbobur Mansurov", status: "Nomalum", reason: "" },
-    { id: 17, name: "Muhammadmuso Qodorov", status: "Nomalum", reason: "" },
-    { id: 18, name: "Og'abek Xasanov", status: "Nomalum", reason: "" },
-    { id: 19, name: "Rano Yõldasheva", status: "Nomalum", reason: "" },
-    { id: 20, name: "Shamsiddin Xusanov", status: "Nomalum", reason: "" },
-    { id: 21, name: "Sherxon Sunnatov", status: "Nomalum", reason: "" },
-    { id: 22, name: "Umid Murotov", status: "Nomalum", reason: "" },
-    { id: 23, name: "Xusan Sunnatov", status: "Nomalum", reason: "" },
-    { id: 24, name: "Yahyo Ikromov", status: "Nomalum", reason: "" },
-    { id: 25, name: "Zamir Tuygunov", status: "Nomalum", reason: "" },
+    { id: 11, name: "Jamoliddin Murodullayev", status: "Nomalum", reason: "" },
+    { id: 12, name: "Muhammadbobur Mansurov", status: "Nomalum", reason: "" },
+    { id: 13, name: "Muhammadali Xoshimov", status: "Nomalum", reason: "" },
+    { id: 14, name: "Muhammadmuso Qodirov", status: "Nomalum", reason: "" }, 
+    { id: 15, name: "Madinaxon Maxmudova", status: "Nomalum", reason: "" },
+    { id: 16, name: "Madinabonu Axmadjonova", status: "Nomalum", reason: "" }, 
+    { id: 17, name: "Mohinur Nosirjonova", status: "Nomalum", reason: "" },
+    { id: 18, name: "Og'abek Hasanov", status: "Nomalum", reason: "" }, 
+    { id: 19, name: "Rano Yo'ldasheva", status: "Nomalum", reason: "" },
+    { id: 20, name: "Umidjon Murotov", status: "Nomalum", reason: "" }, 
+    { id: 21, name: "Xusan Sunnatov", status: "Nomalum", reason: "" },
+    { id: 22, name: "Yahyo Ikromov", status: "Nomalum", reason: "" },
+    { id: 23, name: "Zamir Tuygunov", status: "Nomalum", reason: "" },
+    { id: 24, name: "Shamsiddin Xusanov", status: "Nomalum", reason: "" },
+    { id: 25, name: "Shohjahon Soatov", status: "Nomalum", reason: "" },
+    { id: 26, name: "Sherxon Sunnatov", status: "Nomalum", reason: "" },
 ];
 
 let students = JSON.parse(JSON.stringify(INITIAL_STUDENTS));
