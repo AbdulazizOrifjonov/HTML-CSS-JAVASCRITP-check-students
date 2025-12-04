@@ -1,403 +1,388 @@
-        /* ASOSIY CSS QISMI */
-
-        /* Asosiy Ranglar: Yashil #00b533, Sariq #ffcc19, Qizil #dc3545 */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 20px;
-            background-color: #f0f3f5;
-        }
-        input{
-            border: none;
-            outline: none;
-            color: #aaa;
-        }
-
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        h1,
-        h2 {
-            color: #00b;
-            border-bottom: 2px solid #00b5331a;
-            padding-bottom: 10px;
-        }
-
-        .student-row {
-            display: flex;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px dashed #eee;
-            margin-bottom: 8px;
-        }
-
-        .student-name {
-            width: 200px;
-            font-weight: 600;
-            color: #212529;
-        }
-
-        /* Davomat Tugmalarining Yangi Dizayni (Border Radius 8px) */
-        .actions button {
-            margin-right: 8px;
-            padding: 8px 14px;
-            cursor: pointer;
-            border: none;
-            border-radius: 8px;
-            /* BIR XIL QILINDI: 8px */
-            transition: background-color 0.2s;
-            font-weight: 500;
-            color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .actions .present {
-            background-color: #00b533;
-        }
-
-        .actions .present:hover {
-            background-color: #008033;
-        }
-
-        .actions .late {
-            background-color: #ffcc19;
-            color: #212529;
-        }
-
-        .actions .late:hover {
-            background-color: #e6b800;
-        }
-
-        .actions .absent {
-            background-color: #dc3545;
-        }
-
-        .actions .absent:hover {
-            background-color: #b02a37;
-        }
-
-        .extra-input {
-            margin-left: 20px;
-            min-width: 400px;
-            display: none;
-        }
-
-        /* STATUS BADGE STILI */
-        .status-badge {
-            margin-left: 20px;
-            /* padding: 6px 10px;  */
-            /* wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww */
-            border-radius: 8px;
-            /* Badge radiusi 15px qoldi */
-            font-size: 0.85em;
-            font-weight: bold;
-            width: 236px;
-            height: 31px;
-            min-width: 120px;
-            /* Eni saqlab qolindi */
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid transparent;
-            /* Umumiy border bo'lmasligi uchun */
-        }
-
-        .status-badge.keldi {
-            background-color: #d8f5e2;
-            color: #008033;
-        }
-
-        .status-badge.kechqoldi {
-            background-color: #ffeeb5;
-            color: #cc9900;
-        }
-
-        .status-badge.kelmadi {
-            background-color: #ffc2c2;
-            color: #dc3545;
-        }
-
-        /* NOMALUM STATUSI: Qizil ramka olib tashlandi */
-        .status-badge.nomalum {
-            background-color: #acdbfb;
-            color: #0088ff;
-            /* Borderlar o'chirildi */
-        }
-
-        #lesson-selection {
-            margin-bottom: 25px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: #f8f8f8;
-        }
-
-        #lesson-selection p {
-            font-weight: bold;
-            color: #00b;
-            margin-bottom: 10px;
-        }
-
-        #lesson-selection button {
-            margin: 5px;
-            padding: 10px 15px;
-            background-color: #00b;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            /* BIR XIL QILINDI: 8px */
-            cursor: pointer;
-        }
-
-        #lesson-selection button:hover {
-            background-color: #00b533;
-        }
-
-        #attendance-section {
-            display: none;
-        }
-
-        /* Yakunlash tugmasi (Kenglik 250px va Border Radius 8px) */
-        .save-button {
-            /* margin-top: 30px; 
-            padding: 14px 30px !important;  */
-            background-color: #00b533 !important;
-            color: white !important;
-            border: none !important;
-            border-radius: 8px !important;
-            /* BIR XIL QILINDI: 8px */
-            cursor: pointer;
-            font-size: 1.1em !important;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0, 181, 51, 0.4);
-            width: 450px;
-            /* Kenglik 250px */
-            height: 42px;
-        }
-
-        .save-button:hover {
-            background-color: #008033 !important;
-        }
-
-        .error-message {
-            color: #dc3545;
-            font-weight: bold;
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #dc3545;
-            background-color: #fcebeb;
-            border-radius: 6px;
-        }
-
-        /* MODAL CSS (Border Radius 8px) */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 120%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.6);
-            animation: fadeIn 0.3s;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 10% auto;
-            padding: 30px;
-            height: 220px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            width: 80%;
-            max-width: 500px;
-            position: relative;
-            animation: slideIn 0.3s;
-        }
-
-        .modal-header {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #00b;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        .modal-body input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            box-sizing: border-box;
-        }
-
-        .modal-body button {
-            background-color: #00b533;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            /* BIR XIL QILINDI: 8px */
-            cursor: pointer;
-            float: right;
-            transition: background-color 0.2s;
-        }
-
-        .modal-body button:hover {
-            background-color: #008033;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            text-decoration: none;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            cursor: pointer;
-        }
-
-        /* Orqaga Qaytish Tugmasi Stili (Border Radius 8px) */
-        #go-back-button {
-            background-color: #26a49d;
-            color: white;
-            /* padding: 8px 15px; */
-            width: 200px;
-            height: 32px;
-            border: none;
-            border-radius: 8px;
-            /* BIR XIL QILINDI: 8px */
-            cursor: pointer;
-            /* margin-top: 10px;
-            margin-right: 15px;  */
-        }
-
-        #go-back-button:hover {
-            background-color: #1d7773;
-        }
-
-        /* Hammasi Keldi Tugmasi Stili (Border Radius 8px) */
-        #mark-all-present-button {
-            background-color: #00b533;
-            color: white;
-            /* padding: 8px 15px;  */
-            width: 300px;
-            height: 32px;
-            border: none;
-            border-radius: 8px;
-            /* BIR XIL QILINDI: 8px */
-            cursor: pointer;
-            /* margin-top: 10px;
-            margin-bottom: 20px; */
-        }
-
-        #mark-all-present-button:hover {
-            background-color: #008033;
-        }
-
-        .toga {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        @media screen and (max-width: 900px) {
-            .status-badge {
-
-                width: 200px;
-                height: 31px;
-
-            }
-
-            .actions button {
-                margin-right: 8px;
-                padding: 8px 8px;
-
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        @media screen and (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            .student-row {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 15px 0;
-            }
-            .student-name {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-            .actions {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-            .actions button {
-                margin-right: 5px;
-                padding: 6px 10px;
-                font-size: 0.9em;
-            }
-            .status-badge {
-                margin-left: 0;
-                margin-top: 10px;
-            }
-            .extra-input {
-                margin-left: 0;
-                min-width: 100%;
-            }
-            .extra-input input {
-                width: 80%;
-            }
-            .toga {
-                flex-direction: column;
-            }
-            #mark-all-present-button, #go-back-button {
-                width: 100%;
-            }
-            .save-button {
-                width: 100% !important;
-                padding: 12px 0 !important;
-            }
-        }
+/* ======================================================= */
+/* ASOSIY CSS QISMI (Notification uchun yangilangan) */
+/* ======================================================= */
+
+/* Asosiy Ranglar: Yashil #00b533, Sariq #ffcc19, Qizil #dc3545 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    background-color: #f0f3f5;
+}
+
+input {
+    border: none;
+    outline: none;
+    color: #363636;
+}
+
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+h1,
+h2 {
+    color: #00b;
+    border-bottom: 2px solid #00b5331a;
+    padding-bottom: 10px;
+}
+
+.student-row {
+    display: flex;
+    /* padding: 12px 0; */
+    border-bottom: 1px dashed #575757;
+    margin: 25px 0 4px 0;
+    align-items: center !;
+    justify-content: center;
+}
+
+.student-name {
+    width: 220px;
+    font-weight: 600;
+    color: #212529;
+    display: flex;
+    /* align-items: center; */
+
+}
+ 
+
+/* Davomat Tugmalarining Yangi Dizayni (Border Radius 8px) */
+.actions button {
+    /* margin-right: 8px; */
+    padding: 8px 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+    font-weight: 500;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+.actions .present {
+    background-color: #00b533;
+}
+
+.actions .present:hover {
+    background-color: #008033;
+}
+
+.actions .late {
+    background-color: #ffcc19;
+    color: #212529;
+}
+
+.actions .late:hover {
+    background-color: #e6b800;
+}
+
+.actions .absent {
+    background-color: #dc3545;
+}
+
+.actions .absent:hover {
+    background-color: #b02a37;
+}
+
+.extra-input {
+    margin-left: 20px;
+    min-width: 400px;
+    display: none;
+}
+
+/* STATUS BADGE STILI */
+.status-badge {
+    margin-left: 20px;
+    border-radius: 8px;
+    font-size: 0.85em;
+    font-weight: bold;
+    width: 236px;
+    height: 31px;
+    min-width: 120px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+}
+
+.status-badge.keldi {
+    background-color: #d8f5e2;
+    color: #008033;
+}
+
+.status-badge.kechqoldi {
+    background-color: #ffeeb5;
+    color: #cc9900;
+}
+
+.status-badge.kelmadi {
+    background-color: #ffc2c2;
+    color: #dc3545;
+}
+
+/* NOMALUM STATUSI */
+.status-badge.nomalum {
+    background-color: #acdbfb;
+    color: #0088ff;
+}
+
+#lesson-selection {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f8f8f8;
+}
+
+#lesson-selection p {
+    font-weight: bold;
+    color: #00b;
+    margin-bottom: 10px;
+}
+
+#lesson-selection button {
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: #00b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#lesson-selection button:hover {
+    background-color: #00b533;
+}
+
+#attendance-section {
+    display: none;
+}
+
+/* Yakunlash tugmasi */
+.save-button {
+    background-color: #00b533 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    cursor: pointer;
+    font-size: 1.1em !important;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 181, 51, 0.4);
+    width: 450px;
+    height: 42px;
+}
+
+.save-button:hover {
+    background-color: #008033 !important;
+}
+
+.error-message {
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #dc3545;
+    background-color: #fcebeb;
+    border-radius: 6px;
+}
+
+/* MODAL CSS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 120%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 30px;
+    height: 220px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    animation: slideIn 0.3s;
+}
+
+.modal-header {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00b;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.modal-body input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.modal-body button {
+    background-color: #00b533;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    float: right;
+    transition: background-color 0.2s;
+}
+
+.modal-body button:hover {
+    background-color: #008033;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    cursor: pointer;
+}
+
+/* Orqaga Qaytish Tugmasi Stili */
+#go-back-button {
+    background-color: #26a49d;
+    color: white;
+    width: 200px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#go-back-button:hover {
+    background-color: #1d7773;
+}
+
+/* Hammasi Keldi Tugmasi Stili */
+#mark-all-present-button {
+    background-color: #00b533;
+    color: white;
+    width: 300px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#mark-all-present-button:hover {
+    background-color: #008033;
+}
+
+.toga {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+/* ======================================================= */
+/* YENGI BILDİRİŞNOMA (NOTIFICATION TOAST) STILI */
+/* ======================================================= */
+
+.notification {
+    position: fixed;
+    top: -100px; /* Boshlanishda tepadan yashiriladi */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    opacity: 0;
+    transition: all 0.5s ease;
+    min-width: 300px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Bildirishnoma ko'rsatilganda */
+.notification.show {
+    top: 20px; /* Tushib turadigan joyi */
+    opacity: 1;
+}
+
+/* Ranglar: Success, Error, Info */
+.notification.success {
+    background-color: #00b533; /* Yashil */
+}
+
+.notification.error {
+    background-color: #dc3545; /* Qizil */
+}
+
+.notification.info {
+    background-color: #26a49d; /* Moviyroq/Axborot */
+}
+
+/* Media Queries (Responsive) */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    .student-row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+    .student-name {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .actions {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .actions button {
+        margin-right: 5px;
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+    .status-badge {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .toga {
+        flex-direction: column;
+    }
+    #mark-all-present-button, #go-back-button {
+        width: 100%;
+    }
+    .save-button {
+        width: 100% !important;
+        padding: 12px 0 !important;
+    }
+}
