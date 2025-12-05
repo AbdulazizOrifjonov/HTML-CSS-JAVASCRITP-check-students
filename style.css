@@ -44,7 +44,7 @@ h2 {
 
 .student-row {
     display: flex;
-    border-bottom: 1px dashed #575757;
+    border-bottom: 3px dashed #373737;
     margin: 15px 0 4px 0;
     align-items: center;
     justify-content: space-between;
@@ -257,7 +257,7 @@ button {
 .modal-header {
     font-size: 1.2em;
     font-weight: bold;
-    color: #00b;
+    color: #00b533;
     margin-bottom: 20px;
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
