@@ -3,24 +3,19 @@
 /* ======================================================= */
 
 /* Asosiy Ranglar: Yashil #00b533, Sariq #ffcc19, Qizil #dc3545 */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px;
     background-color: #f0f3f5;
     width: 100%;
     margin: 0 auto;
-  
-}
 
-input {
-    border: none;
-    outline: none;
-    color: #363636;
 }
 
 .container {
@@ -29,8 +24,16 @@ input {
     background: white;
     padding: 30px;
     border-radius: 12px;
+    height: 100%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
+
+input {
+    border: none;
+    outline: none;
+    color: #363636;
+}
+
 
 h1,
 h2 {
@@ -41,13 +44,13 @@ h2 {
 
 .student-row {
     display: flex;
-    /* padding: 12px 0; */
     border-bottom: 1px dashed #575757;
     margin: 15px 0 4px 0;
-    align-items: center ;
+    align-items: center;
     justify-content: space-between;
     padding-bottom: 15px;
 }
+
 .student-name {
     width: 225px;
     font-weight: 600;
@@ -55,7 +58,6 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* padding: 0px 14px; */
     cursor: pointer;
     border: none;
     border-radius: 8px;
@@ -66,11 +68,10 @@ h2 {
     border: 2px solid rgb(153, 153, 153);
     height: 35px;
 }
- 
 
-/* Davomat Tugmalarining Yangi Dizayni (Border Radius 8px) */
+
 .actions button {
-  padding: 8px 14px;
+    padding: 8px 14px;
     cursor: pointer;
     border: none;
     border-radius: 8px;
@@ -80,17 +81,15 @@ h2 {
     box-shadow: 0 2px 4px inset rgb(0, 0, 0);
     border: 2px solid transparent;
 
-  
+
 }
+
 .actions button:active {
-    /* Tugmani biroz kichraytiramiz (taxminan 98% gacha) */
-    transform: scale(0.98); 
-    
-    /* Box-shadow'ni o'zgartiramiz, "ichkariga kirgan" effektini berish uchun */
-    /* Inset shadow'ni kamaytirib, normal shadow'ga o'xshatish mumkin */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), /* tashqi soyani qo'shamiz */
-                inset 0 1px 2px rgba(0, 0, 0, 0.2); /* ichki soyani yumshatamiz */
+    transform: scale(0.98);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4),
+        inset 0 1px 2px rgba(0, 0, 0, 0.2);
 }
+
 button {
     box-shadow: 0 2px 4px inset rgba(0, 0, 0, 0.846);
     border: 2px solid transparent !important;
@@ -130,7 +129,6 @@ button {
 
 /* STATUS BADGE STILI */
 .status-badge {
-    /* margin-left: 20px o'rniga flex konteynerdagi gap ishlatiladi */
     border-radius: 8px;
     font-size: 0.85em;
     font-weight: bold;
@@ -208,10 +206,9 @@ button {
     font-size: 1.1em !important;
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0, 181, 51, 0.4);
-    width: 409px;
+    width: 40%;
     height: 42px;
     border: 2px solid #00b533 !important;
-    /* margin-top: 20px o'rniga padding ishlatiladi */
     box-shadow: 0 2px 4px inset rgba(0, 0, 0, 0.846);
 }
 
@@ -247,7 +244,8 @@ button {
     background-color: #fefefe;
     margin: 10% auto;
     padding: 30px;
-    height: 220px;
+    height: auto;
+    padding-bottom: 60px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     width: 80%;
@@ -331,6 +329,9 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #mark-all-present-button:hover {
@@ -350,7 +351,7 @@ button {
 
 .notification {
     position: fixed;
-    top: -100px; /* Boshlanishda tepadan yashiriladi */
+    top: -100px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
@@ -366,115 +367,121 @@ button {
     font-weight: 500;
 }
 
-/* Bildirishnoma ko'rsatilganda */
 .notification.show {
-    top: 20px; /* Tushib turadigan joyi */
+    top: 20px;
     opacity: 1;
 }
 
 /* Ranglar: Success, Error, Info */
 .notification.success {
-    background-color: #00b533; /* Yashil */
+    background-color: #00b533;
 }
 
 .notification.error {
-    background-color: #dc3545; /* Qizil */
+    background-color: #dc3545;
 }
 
 .notification.info {
-    background-color: #26a49d; /* Moviyroq/Axborot */
+    background-color: #ffcc19;
 }
 
-.student-info-wrapper{
+.student-info-wrapper {
     display: flex;
     align-items: center;
     gap: 20px;
 }
+
 /* Media Queries (Responsive) */
 @media screen and (max-width: 1001px) {
-   .student-row{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    gap: 15px;
-   }
-   .student-info-wrapper{
-       display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-}
-.student-name{
-    width: 99%;
-}
-.status-badge{
-    width: 99%;
-}
-.present{
-    width: 100%;
-}
-.late{
-    width: 100%;
-}
-.absent{
-    width: 100%;
-}
-.actions{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    gap: 15px;
-}
+    #mark-all-present-button p {
+        display: none;
+    }
 
+    .save-button {
+        width: 100%;
+    }
 
+    .student-row {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        gap: 15px;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.container{
- max-width: 100%;
- height: 100%;
- font-size: 40px;
-}
-#lesson-selection{
-    height: 300px;
-    font-size:50px ;
-
-}
-#lesson-selection button{
-    width: 300px;
-    height: 100px;
-    font-size:50px ;
-
-}
-}
-/* @media screen and (max-width: 350px) {
-    .toga {
+    .student-info-wrapper {
         display: flex;
         align-items: center;
-        gap: none !important;
-        margin-bottom: 20px;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
     }
-} */
+
+    .student-name {
+        width: 99%;
+    }
+
+    .status-badge {
+        width: 99%;
+    }
+
+    .present {
+        width: 100%;
+    }
+
+    .late {
+        width: 100%;
+    }
+
+    .absent {
+        width: 100%;
+    }
+
+    .actions {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 3px;
+    }
+
+    .actions button {
+        padding: 8px 1px;
+        font-size: 12px;
+    }
+
+    .modal-content {
+        width: 89%;
+        height: auto;
+        padding-bottom: 70px;
+    }
+
+
+
+
+    #mark-all-present-button span {
+        font-size: 20px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .container {
+        max-width: 100%;
+        height: 100%;
+    }
+
+}
