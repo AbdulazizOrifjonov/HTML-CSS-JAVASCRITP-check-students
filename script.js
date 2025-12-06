@@ -24,15 +24,15 @@ const SCHEDULE = {
 
 // O'quvchilarning yangilangan ro'yxati
 const INITIAL_STUDENTS = [
-    { id: 1, name: "Abdulazizbek Orifjonov", status: "Nomalum", reason: "" },
-    { id: 2, name: "Abdulloh Nozimov", status: "Nomalum", reason: "" },
-    { id: 3, name: "Azizbek Tulegenov", status: "Nomalum", reason: "" },
-    { id: 4, name: "Behruz Bozorov", status: "Nomalum", reason: "" },
-    { id: 5, name: "Behruz Ilhomov", status: "Nomalum", reason: "" },
-    { id: 6, name: "Behruz Kurbonov", status: "Nomalum", reason: "" },
-    { id: 7, name: "Bobur Ikromjonov", status: "Nomalum", reason: "" },
-    { id: 8, name: "Darmanbek Shamuratov", status: "Nomalum", reason: "" },
-    { id: 9, name: "Foziljon Mo'minov", status: "Nomalum", reason: "" },
+    { id: 1,  name: "Abdulazizbek Orifjonov", status: "Nomalum", reason: "" },
+    { id: 2,  name: "Abdulloh Nozimov", status: "Nomalum", reason: "" },
+    { id: 3,  name: "Azizbek Tulegenov", status: "Nomalum", reason: "" },
+    { id: 4,  name: "Behruz Bozorov", status: "Nomalum", reason: "" },
+    { id: 5,  name: "Behruz Ilhomov", status: "Nomalum", reason: "" },
+    { id: 6,  name: "Behruz Kurbonov", status: "Nomalum", reason: "" },
+    { id: 7,  name: "Bobur Ikromjonov", status: "Nomalum", reason: "" },
+    { id: 8,  name: "Darmanbek Shamuratov", status: "Nomalum", reason: "" },
+    { id: 9,  name: "Foziljon Mo'minov", status: "Nomalum", reason: "" },
     { id: 10, name: "Farrux G'aniboyev", status: "Nomalum", reason: "" },
     { id: 11, name: "Jamoliddin Murodullayev", status: "Nomalum", reason: "" },
     { id: 12, name: "Muhammadbobur Mansurov", status: "Nomalum", reason: "" },
@@ -60,7 +60,7 @@ let currentStatus = null;
 
 const DAY_NAMES_UZ = {
     "Monday": "Dushanba", "Tuesday": "Seshanba", "Wednesday": "Chorshanba",
-    "Thursday": "Payshanba", "Friday": "Juma", "Saturday": "Shanba", "Sunday": "Yakshanba"
+    "Thursday": "Payshanba", "Friday": "Juma", "Saturday": "shanba", "Sunday": "Yakshanba"
 };
 
 
