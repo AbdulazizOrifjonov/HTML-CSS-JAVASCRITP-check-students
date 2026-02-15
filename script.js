@@ -1,6 +1,6 @@
-// =======================================================
+// ======
 // script.js - Davomat Jurnali Mantiqi (Notification bilan)
-// =======================================================
+// ======
 
 // ---------------------------
 // 1. CONFIGURATION & MA'LUMOTLAR - **USHBU QISMLARNI TEKSHIRING!**
@@ -61,7 +61,7 @@ const INITIAL_STUDENTS = [
   { id: 24, name: "Shamsiddin Xusanov", status: "Nomalum", reason: "" },
   { id: 25, name: "Shohjahon Soatov", status: "Nomalum", reason: "" },
   { id: 26, name: "Sherxon Sunnatov", status: "Nomalum", reason: "" },
-=======
+
     "Monday": ["Information Technology Systems (Lecture)", "Website Development", "Website Development"],
     "Tuesday": ["Study Skills", "Falsafa L3", "Information Technology Systems (Practice)"],
     "Wednesday": ["Study Skills", "Programming (Practice) L3", "Programming (Lecture) L3"],
@@ -98,7 +98,7 @@ const INITIAL_STUDENTS = [
     { id: 24, name: "Shamsiddin Xusanov", status: "Nomalum", reason: "" },
     { id: 25, name: "Shohjahon Soatov", status: "Nomalum", reason: "" },
     { id: 26, name: "Sherxon Sunnatov", status: "Nomalum", reason: "" },
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 ];
 
 let students = JSON.parse(JSON.stringify(INITIAL_STUDENTS));
@@ -108,7 +108,7 @@ let currentStudentId = null;
 let currentStatus = null;
 
 const DAY_NAMES_UZ = {
-<<<<<<< HEAD
+
   Monday: "Dushanba",
   Tuesday: "Seshanba",
   Wednesday: "Chorshanba",
@@ -118,18 +118,18 @@ const DAY_NAMES_UZ = {
   Sunday: "Yakshanba",
 };
 
-=======
+
     "Monday": "Dushanba", "Tuesday": "Seshanba", "Wednesday": "Chorshanba",
     "Thursday": "Payshanba", "Friday": "Juma", "Saturday": "shanba", "Sunday": "Yakshanba"
 };
 
 
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 // ---------------------------
 // 2. YORDAMCHI FUNKSIYALAR
 // ---------------------------
 function getCurrentDayName() {
-<<<<<<< HEAD
+
   const date = new Date();
   const days = [
     "Sunday",
@@ -151,7 +151,7 @@ function getFormattedTimestamp() {
   const hour = String(now.getHours()).padStart(2, "0");
   const minute = String(now.getMinutes()).padStart(2, "0");
   return `${year}/${month}/${day}/${hour}:${minute}`;
-=======
+
     const date = new Date();
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     return days[date.getDay()];
@@ -165,7 +165,7 @@ function getFormattedTimestamp() {
     const hour = String(now.getHours()).padStart(2, '0');
     const minute = String(now.getMinutes()).padStart(2, '0');
     return `${year}/${month}/${day}/${hour}:${minute}`;
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 }
 
 /**
@@ -173,7 +173,7 @@ function getFormattedTimestamp() {
  * @param {string} message - Ko'rsatiladigan matn
  * @param {('success'|'error'|'info')} type - Bildirishnoma turi (rangi uchun)
  */
-<<<<<<< HEAD
+
 function showNotification(message, type = "info") {
   const toast = document.getElementById("notification-toast");
   if (!toast) return;
@@ -194,7 +194,7 @@ function showNotification(message, type = "info") {
   }, 4000);
 }
 
-=======
+
 function showNotification(message, type = 'info') {
     const toast = document.getElementById('notification-toast');
     if (!toast) return;
@@ -216,12 +216,12 @@ function showNotification(message, type = 'info') {
 }
 
 
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 // ---------------------------
 // 3. RENDER VA INITIALIZE
 // ---------------------------
 function initializePage() {
-<<<<<<< HEAD
+
   currentDayName = getCurrentDayName();
   const uzDayName = DAY_NAMES_UZ[currentDayName];
   const lessons = SCHEDULE[currentDayName] || [];
@@ -262,7 +262,7 @@ function selectLesson(lessonName) {
   document.getElementById("validation-error").style.display = "none";
 
   renderStudents();
-=======
+
     currentDayName = getCurrentDayName();
     const uzDayName = DAY_NAMES_UZ[currentDayName];
     const lessons = SCHEDULE[currentDayName] || [];
@@ -298,14 +298,14 @@ function selectLesson(lessonName) {
     document.getElementById('validation-error').style.display = 'none';
 
     renderStudents();
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 }
 
 /**
  * Dars tanlash sahifasiga qaytaradi (Notification ishlatildi)
  */
 function goBackToLessonSelection() {
-<<<<<<< HEAD
+
   students = JSON.parse(JSON.stringify(INITIAL_STUDENTS));
   currentSubject = "";
 
@@ -320,7 +320,7 @@ function goBackToLessonSelection() {
     "⬅️ Dars tanlash sahifasiga qaytildi. Oldingi davomat ma'lumotlari bekor qilindi.",
     "info",
   );
-=======
+
     students = JSON.parse(JSON.stringify(INITIAL_STUDENTS));
     currentSubject = "";
 
@@ -332,14 +332,14 @@ function goBackToLessonSelection() {
     initializePage();
     // Notification bilan ogohlantirish
     showNotification("⬅️ Dars tanlash sahifasiga qaytildi. Oldingi davomat ma'lumotlari bekor qilindi.", 'info');
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 }
 
 /**
  * Barcha o'quvchilarni "Keldi" deb belgilaydi (Notification ishlatildi)
  */
 function markAllPresent() {
-<<<<<<< HEAD
+
   students.forEach((student) => {
     student.status = "Keldi";
     student.reason = "";
@@ -349,7 +349,7 @@ function markAllPresent() {
   showNotification("✅ Barcha o'quvchilar Keldi deb belgilandi.", "success");
 }
 
-=======
+
     students.forEach(student => {
         student.status = "Keldi";
         student.reason = "";
@@ -360,13 +360,13 @@ function markAllPresent() {
 }
 
 
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 /**
  * O'quvchilar ro'yxatini to'liq teglar bilan render qiladi.
  * **TALABGA MOS YANGILANDI:** student-info-wrapper ichida nom va status badge; alohida actions div.
  */
 function renderStudents() {
-<<<<<<< HEAD
+
   const listContainer = document.getElementById("attendance-list");
   if (!listContainer) return;
 
@@ -410,7 +410,7 @@ function renderStudents() {
 
     // TALAB QILINGAN BUTTONLAR BIR DIV ICHIDA
     actionsDiv.innerHTML = `
-=======
+
     const listContainer = document.getElementById('attendance-list');
     if (!listContainer) return;
 
@@ -454,12 +454,12 @@ function renderStudents() {
         
         // TALAB QILINGAN BUTTONLAR BIR DIV ICHIDA
         actionsDiv.innerHTML = `
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
             <button class="present" onclick="markAttendance(${student.id}, 'present')">✅ Keldi</button>
             <button class="late" onclick="markAttendance(${student.id}, 'late')">⏰ Kech qoldi</button>
             <button class="absent" onclick="markAttendance(${student.id}, 'absent')">❌ Kelmadi</button>
         `;
-<<<<<<< HEAD
+
 
     row.appendChild(actionsDiv); // Tugmalarni asosiy qatorga qo'shamiz
 
@@ -470,7 +470,7 @@ function renderStudents() {
   });
 }
 
-=======
+
         
         row.appendChild(actionsDiv); // Tugmalarni asosiy qatorga qo'shamiz
 
@@ -482,13 +482,13 @@ function renderStudents() {
 }
 
 
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 // ---------------------------
 // 4. DAVOMATNI BELGILASH MANTIQI
 // ---------------------------
 
 function markAttendance(studentId, status) {
-<<<<<<< HEAD
+
   const student = students.find((s) => s.id === studentId);
   if (!student) return;
 
@@ -501,7 +501,7 @@ function markAttendance(studentId, status) {
     // Modal ochiladi
     openReasonModal(studentId, status);
   }
-=======
+
     const student = students.find(s => s.id === studentId);
     if (!student) return;
 
@@ -514,7 +514,7 @@ function markAttendance(studentId, status) {
         // Modal ochiladi
         openReasonModal(studentId, status);
     }
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 }
 
 // ---------------------------
@@ -522,7 +522,7 @@ function markAttendance(studentId, status) {
 // ---------------------------
 
 function openReasonModal(studentId, status) {
-<<<<<<< HEAD
+
   const student = students.find((s) => s.id === studentId);
 
   if (!student) return;
@@ -599,7 +599,7 @@ function saveReasonFromModal() {
 
   closeModal();
   renderStudents();
-=======
+
     const student = students.find(s => s.id === studentId);
 
     if (!student) return;
@@ -673,12 +673,12 @@ function saveReasonFromModal() {
 
     closeModal();
     renderStudents();
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 }
 
 // Modal foniga bosilganda yopish
 window.onclick = function (event) {
-<<<<<<< HEAD
+
   if (event.target == document.getElementById("reasonModal")) {
     saveReasonFromModal();
   }
@@ -694,7 +694,7 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-=======
+
     if (event.target == document.getElementById('reasonModal')) {
         saveReasonFromModal();
     }
@@ -708,13 +708,13 @@ document.addEventListener('keydown', function (event) {
 });
 
 
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 // ---------------------------
 // 6. TELEGRAM REPORT FUNKSIYASI **(TO'G'RILANDI)**
 // ---------------------------
 
 async function sendAttendanceReportToTelegram(finalData) {
-<<<<<<< HEAD
+
   const report = finalData.attendance;
   const date = finalData.timestamp.split("/").slice(0, 3).join(".");
   const subject = finalData.subject;
@@ -752,7 +752,7 @@ async function sendAttendanceReportToTelegram(finalData) {
     .join("\n");
 
   let messageText = `
-=======
+
 
     const report = finalData.attendance;
     const date = finalData.timestamp.split('/').slice(0, 3).join('.');
@@ -781,7 +781,7 @@ async function sendAttendanceReportToTelegram(finalData) {
     }).join('\n');
 
     let messageText = `
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 <b>📘 Davomat yakunlandi</b>
 <b>📚 Fan:</b> ${subject}
 <b>📅 Sana:</b> ${date} (${uzDayName})
@@ -797,7 +797,7 @@ ${absentList || "— Hech kim"}
 
 `;
 
-<<<<<<< HEAD
+
   const params = {
     chat_id: CHAT_ID,
     text: messageText.trim(),
@@ -822,7 +822,7 @@ ${absentList || "— Hech kim"}
     console.error("Fetch xatosi (Tarmoq yoki CORS muammosi):", error);
     return false;
   }
-=======
+
     const params = { chat_id: CHAT_ID, text: messageText.trim(), parse_mode: 'HTML' };
 
     try {
@@ -843,7 +843,7 @@ ${absentList || "— Hech kim"}
         console.error("Fetch xatosi (Tarmoq yoki CORS muammosi):", error);
         return false;
     }
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 }
 
 // ---------------------------
@@ -851,7 +851,7 @@ ${absentList || "— Hech kim"}
 // ---------------------------
 
 async function saveFinalAttendance() {
-<<<<<<< HEAD
+
   const errorElement = document.getElementById("validation-error");
   const unmarkedStudents = students.filter((s) => s.status === "Nomalum");
 
@@ -914,7 +914,7 @@ async function saveFinalAttendance() {
 }
 
 document.addEventListener("DOMContentLoaded", initializePage);
-=======
+
     const errorElement = document.getElementById('validation-error');
     const unmarkedStudents = students.filter(s => s.status === 'Nomalum');
 
@@ -971,7 +971,7 @@ document.addEventListener("DOMContentLoaded", initializePage);
 }
 
 document.addEventListener('DOMContentLoaded', initializePage);
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
 
 // Global funksiyalarni browser'da ishlatish uchun e'lon qilish
 window.markAttendance = markAttendance;
@@ -981,8 +981,8 @@ window.saveReasonFromModal = saveReasonFromModal;
 window.saveFinalAttendance = saveFinalAttendance;
 window.goBackToLessonSelection = goBackToLessonSelection;
 window.markAllPresent = markAllPresent;
-<<<<<<< HEAD
+
 window.showNotification = showNotification;
-=======
+
 window.showNotification = showNotification;
->>>>>>> 3c3d9016d813d321ce5e39004a5e543a92329f87
+
