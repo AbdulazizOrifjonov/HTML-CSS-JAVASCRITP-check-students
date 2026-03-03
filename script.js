@@ -7,7 +7,7 @@
 // ---------------------------
 
 // Telegram Bot Konfiguratsiyasi (Konfiguratsiyani o'zgartiring)
-const BOT_TOKEN = "8444731509:AAExJdlcYKS4u4lgZUpxyMFDrNjjMp-ZlbA";
+const BOT_TOKEN = "8712018395:AAFXzwjygl2uOA-2FJMFkWsmrHmkku0kIBY";
 const CHAT_ID = "-1003377614514";
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 const UNAVAILABLE_REASON = "Sababsiz (Habarimiz yo'q)";
