@@ -20,11 +20,11 @@ const SCHEDULE = {
     "Business Process Modelling Tools (Room 240)",
   ],
   Wednesday: [
-    "Big Data and Business Analytics (Room 233)",
+     "Full Stack Development - Practice (Room 240)" ,
     "Full Stack Development - Practice (Lecture 231)",
   ],
   Thursday: [
-    "Full Stack Development - Practice (Room 240)",
+  "Big Data and Business Analytics (Room 233)" ,
     "Big Data and Business Analytics (Room 327)",
   ],
   Friday: [
