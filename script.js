@@ -8,9 +8,7 @@
 
 // Telegram Bot Konfiguratsiyasi (Konfiguratsiyani o'zgartiring)
 const BOT_TOKEN = "8712018395:AAFXzwjygl2uOA-2FJMFkWsmrHmkku0kIBY";
-const CHAT_IDS = "
-  -1003377614514,
-  -1003663002176";
+const CHAT_ID = "-1003377614514";
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 const UNAVAILABLE_REASON = "Sababsiz (Habarimiz yo'q)";
 
@@ -421,34 +419,26 @@ ${absentList || "— Hech kim"}
 
 `;
 
-try {
-  const results = await Promise.all(
-    CHAT_IDS.map(chatId =>
-      fetch(TELEGRAM_API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: messageText.trim(),
-          parse_mode: "HTML",
-        }),
-      }).then(res => res.json())
-    )
-  );
+    const params = { chat_id: CHAT_ID, text: messageText.trim(), parse_mode: 'HTML' };
 
-  // agar birortasi xato bersa console ga chiqadi
-  results.forEach(r => {
-    if (!r.ok) {
-      console.error("Telegram API xatosi:", r.description);
+    try {
+        const response = await fetch(TELEGRAM_API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(params)
+        });
+        const data = await response.json();
+        
+        // API tomonidan qaytarilgan xatoni console'ga chiqarish
+        if (!data.ok) {
+            console.error("Telegram API xatosi:", data.description);
+        }
+        
+        return data.ok; // data.ok = true bo'lsa, muvaffaqiyatli
+    } catch (error) {
+        console.error("Fetch xatosi (Tarmoq yoki CORS muammosi):", error);
+        return false;
     }
-  });
-
-  return results.every(r => r.ok);
-
-} catch (error) {
-  console.error("Fetch xatosi:", error);
-  return false;
-}
 }
 
 // ---------------------------
