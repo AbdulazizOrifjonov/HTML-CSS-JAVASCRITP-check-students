@@ -8,17 +8,15 @@
 
 // Telegram Bot Konfiguratsiyasi (Konfiguratsiyani o'zgartiring)
 const BOT_TOKEN = "8712018395:AAFXzwjygl2uOA-2FJMFkWsmrHmkku0kIBY";
-const CHAT_ID ="
+const CHAT_IDS = "
   -1003377614514,
   -1003663002176";
-  
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 const UNAVAILABLE_REASON = "Sababsiz (Habarimiz yo'q)";
 
 // Dars jadvallari (Bugungi darslarni o'zgartirishingiz mumkin)
 const SCHEDULE = {
-  Monday: ["Study Skills (Room 239)",
-           "Dinshunoslik - Seminar (Lecture 236)"],
+  Monday: ["Study Skills (Room 239)", "Dinshunoslik - Seminar (Lecture 236)"],
   Tuesday: [
     "Full Stack Development - Lecture (Room 320)",
     "Business Process Modelling Tools (Room 240)",
@@ -422,9 +420,10 @@ ${lateList || "— Hech kim"}
 ${absentList || "— Hech kim"}
 
 `;
+
 try {
   const results = await Promise.all(
-    CHAT_ID.map(chatId =>
+    CHAT_IDS.map(chatId =>
       fetch(TELEGRAM_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -449,6 +448,7 @@ try {
 } catch (error) {
   console.error("Fetch xatosi:", error);
   return false;
+}
 }
 
 // ---------------------------
