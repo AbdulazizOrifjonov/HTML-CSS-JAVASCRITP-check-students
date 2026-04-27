@@ -8,13 +8,17 @@
 
 // Telegram Bot Konfiguratsiyasi (Konfiguratsiyani o'zgartiring)
 const BOT_TOKEN = "8712018395:AAFXzwjygl2uOA-2FJMFkWsmrHmkku0kIBY";
-const CHAT_ID = "-1003377614514";
+const CHAT_ID ="
+  -1003377614514,
+  -1003663002176";
+  
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 const UNAVAILABLE_REASON = "Sababsiz (Habarimiz yo'q)";
 
 // Dars jadvallari (Bugungi darslarni o'zgartirishingiz mumkin)
 const SCHEDULE = {
-  Monday: ["Study Skills (Room 239)", "Dinshunoslik - Seminar (Lecture 236)"],
+  Monday: ["Study Skills (Room 239)",
+           "Dinshunoslik - Seminar (Lecture 236)"],
   Tuesday: [
     "Full Stack Development - Lecture (Room 320)",
     "Business Process Modelling Tools (Room 240)",
@@ -419,26 +423,33 @@ ${absentList || "— Hech kim"}
 
 `;
 
-    const params = { chat_id: CHAT_ID, text: messageText.trim(), parse_mode: 'HTML' };
+    const results = await Promise.all(
+    CHAT_ID.map(chatId =>
+      fetch(TELEGRAM_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: messageText.trim(),
+          parse_mode: "HTML",
+        }),
+      }).then(res => res.json())
+    )
+  );
 
-    try {
-        const response = await fetch(TELEGRAM_API_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(params)
-        });
-        const data = await response.json();
-        
-        // API tomonidan qaytarilgan xatoni console'ga chiqarish
-        if (!data.ok) {
-            console.error("Telegram API xatosi:", data.description);
-        }
-        
-        return data.ok; // data.ok = true bo'lsa, muvaffaqiyatli
-    } catch (error) {
-        console.error("Fetch xatosi (Tarmoq yoki CORS muammosi):", error);
-        return false;
+  // agar birortasi xato bersa console ga chiqadi
+  results.forEach(r => {
+    if (!r.ok) {
+      console.error("Telegram API xatosi:", r.description);
     }
+  });
+
+  return results.every(r => r.ok);
+
+} catch (error) {
+  console.error("Fetch xatosi:", error);
+  return false;
+}
 }
 
 // ---------------------------
