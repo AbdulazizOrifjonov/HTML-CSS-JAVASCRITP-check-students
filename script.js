@@ -422,8 +422,8 @@ ${lateList || "— Hech kim"}
 ${absentList || "— Hech kim"}
 
 `;
-
-    const results = await Promise.all(
+try {
+  const results = await Promise.all(
     CHAT_ID.map(chatId =>
       fetch(TELEGRAM_API_URL, {
         method: "POST",
@@ -449,7 +449,6 @@ ${absentList || "— Hech kim"}
 } catch (error) {
   console.error("Fetch xatosi:", error);
   return false;
-}
 }
 
 // ---------------------------
