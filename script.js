@@ -405,9 +405,10 @@ async function sendAttendanceReportToTelegram(finalData) {
         const reasonDisplay = hasRealReason(s) ? `(${s.reason})` : `(${UNAVAILABLE_REASON})`;
         return `${index + 1}. ${s.name} ${reasonDisplay}`;
     }).join('\n');
-
+const GROUP_NAME = "25-209"; 
     let messageText = `
 <b>📘 Davomat yakunlandi</b>
+<b>🏫 Guruh:</b> ${GROUP_NAME}
 <b>📚 Fan:</b> ${subject}
 <b>📅 Sana:</b> ${date} (${uzDayName})
 
