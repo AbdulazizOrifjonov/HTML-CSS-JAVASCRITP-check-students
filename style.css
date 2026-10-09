@@ -591,9 +591,8 @@ input:focus {
 
 .modal-content {
     background-color: var(--bg-card);
-    margin: 8% auto;
-    padding: var(--space-3xl);
-    padding-bottom: var(--space-4xl);
+    margin: 10% auto;
+    padding: 28px 32px 32px 32px;
     border-radius: var(--radius-xl);
     border: 1px solid var(--border-default);
     box-shadow: var(--shadow-lg);
@@ -608,27 +607,35 @@ input:focus {
     font-size: 18px;
     font-weight: 600;
     color: var(--uni-teal-light);
-    margin-bottom: var(--space-xl);
+    margin-bottom: 20px;
     border-bottom: 1px solid var(--border-subtle);
-    padding-bottom: var(--space-md);
+    padding-bottom: 12px;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-body p {
     color: var(--text-secondary) !important;
     font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 16px;
 }
 
 .modal-body label {
     color: var(--text-secondary);
     font-size: 13px;
     font-weight: 500;
+    margin-bottom: 8px;
 }
 
 .modal-body input {
     width: 100%;
-    padding: var(--space-md) var(--space-lg);
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-xl);
+    padding: 12px 16px;
+    margin-top: 0;
+    margin-bottom: 24px;
     border: 1px solid var(--border-default);
     border-radius: var(--radius-md);
     background: var(--bg-input);
@@ -654,22 +661,26 @@ input:focus {
 .modal-body button {
     background: linear-gradient(135deg, var(--uni-teal), var(--uni-teal-dark));
     color: white;
-    padding: var(--space-md) var(--space-2xl);
+    padding: 0 28px;
     border: none !important;
     border-radius: var(--radius-md);
     cursor: pointer;
-    float: right;
+    align-self: flex-end;
     transition: var(--transition);
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 14px;
     box-shadow: none;
-    height: 40px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-body button:hover {
     background: linear-gradient(135deg, var(--uni-teal-light), var(--uni-teal));
     box-shadow: var(--shadow-teal);
+    transform: translateY(-1px);
 }
 
 .close {
@@ -854,8 +865,8 @@ button {
 
     .modal-content {
         width: 92%;
-        padding: var(--space-xl);
-        padding-bottom: var(--space-3xl);
+        padding: 24px;
+        padding-bottom: 28px;
     }
 
     .toga {
