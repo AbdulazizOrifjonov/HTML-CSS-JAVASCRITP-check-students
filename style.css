@@ -333,25 +333,23 @@ input:focus {
 /* ===================== STATUS BADGE ===================== */
 .status-badge {
     border-radius: var(--radius-full);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
-    width: 170px;
     min-width: 170px;
-    max-width: 170px;
-    height: 36px;
+    max-width: 460px;
+    width: auto;
+    height: 38px;
     text-align: center;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0 var(--space-md);
+    padding: 0 20px;
     border: 1px solid transparent;
     box-shadow: none;
     transition: var(--transition);
     letter-spacing: 0.3px;
     flex-shrink: 0;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .status-badge.keldi {

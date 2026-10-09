@@ -249,7 +249,10 @@ function renderStudents() {
         
         let badgeText = student.status;
         if (student.reason) {
-            badgeText = `${student.status} (${student.reason.length > 20 ? student.reason.substring(0, 20) + '...' : student.reason})`;
+            const cleanReason = student.reason.includes(UNAVAILABLE_REASON)
+                ? 'Sababsiz'
+                : (student.reason.length > 40 ? student.reason.substring(0, 38) + '...' : student.reason);
+            badgeText = `${student.status} (${cleanReason})`;
         } else if (student.status === 'Nomalum') {
             badgeText = 'Belgilanmagan';
         }
